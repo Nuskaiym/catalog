@@ -1,0 +1,31 @@
+from django.db import models
+from ckeditor_uploader.fields import RichTextUploadingField
+from django_resized import ResizedImageField
+
+
+class Category(models.Model):
+    title = models.CharField(max_length=100)
+    is_active = models.BooleanField(default=True)
+
+
+class SubCategory(models.Model):
+    title = models.CharField(max_length=100)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='sub_categories')
+    is_active = models.BooleanField(default=True)
+
+
+class Manufacturer(models.Model):
+    title = models.CharField(max_length=100)
+    is_active = models.BooleanField(default=True)
+    photo = ResizedImageField(upload_to='product/', verbose_name='Фотография', size=[1000, 600], max_length=300)
+    url = models.URLField(default=None)
+
+
+class Product(models.Model):
+    title = models.CharField(max_length=255)
+    text = RichTextUploadingField()
+    characteristic = RichTextUploadingField()
+    price = models.IntegerField()
+    manufacturer = models.ForeignKey(Manufacturer, on_delete=models.CASCADE, related_name='products')
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='products')
+    sub_category = models.ForeignKey(SubCategory, on_delete=models.CASCADE, related_name='products')
