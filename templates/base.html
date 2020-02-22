@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Broadcast {% endblock %}</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#f67f20">
+        <link rel="shortcut icon" href="{% static 'img/favicon.png' %}">
+        <link rel="apple-touch-icon-precomposed" href="{% static 'img/apple-touch-icon.png' %}">
+        <link rel="stylesheet" href="{% static 'css/uikit.min.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/custom.css' %}" />
+        <script src="js/uikit.min.js"></script>
+        <script src="js/uikit-icons.min.js"></script>
+</head>
+<body>
+{% include 'header.html' %}
+{% block body %}
+
+{% endblock %}
+{% include 'footer.html' %}
+
+</body>
+</html>
