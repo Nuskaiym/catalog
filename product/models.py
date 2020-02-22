@@ -1,6 +1,7 @@
 from django.db import models
 from ckeditor_uploader.fields import RichTextUploadingField
 from django_resized import ResizedImageField
+from smart_selects.db_fields import ChainedForeignKey
 
 
 class Category(models.Model):
@@ -28,4 +29,9 @@ class Product(models.Model):
     price = models.IntegerField()
     manufacturer = models.ForeignKey(Manufacturer, on_delete=models.CASCADE, related_name='products')
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='products')
-    sub_category = models.ForeignKey(SubCategory, on_delete=models.CASCADE, related_name='products')
+    sub_category = ChainedForeignKey(Category,
+                                     chained_field="category",
+                                     chained_model_field="category",
+                                     show_all=False,
+                                     auto_choose=True,
+                                     sort=True)
