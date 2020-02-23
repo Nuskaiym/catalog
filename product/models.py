@@ -8,6 +8,8 @@ class Category(models.Model):
     title = models.CharField(max_length=100)
     is_active = models.BooleanField(default=True)
 
+    def __str__(self):
+        return self.title
 
 class SubCategory(models.Model):
     title = models.CharField(max_length=100)
@@ -29,7 +31,7 @@ class Product(models.Model):
     price = models.IntegerField()
     manufacturer = models.ForeignKey(Manufacturer, on_delete=models.CASCADE, related_name='products')
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='products')
-    sub_category = ChainedForeignKey(Category,
+    sub_category = ChainedForeignKey(SubCategory,
                                      chained_field="category",
                                      chained_model_field="category",
                                      show_all=False,

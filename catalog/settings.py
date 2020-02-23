@@ -72,7 +72,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'catalog.wsgi.application'
-
+USE_DJANGO_JQUERY = True
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
