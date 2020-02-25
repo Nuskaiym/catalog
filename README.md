@@ -8,7 +8,7 @@ git
 
 Database
     
-    create database tournament character set utf8 collate utf8_unicode_ci;
+    create database catalog character set utf8 collate utf8_unicode_ci;
 My Config
 
 create file tournament/my.cnf in the project and edit this file

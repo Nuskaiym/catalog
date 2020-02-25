@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'message',
     'ckeditor',
     'ckeditor_uploader',
+    'smart_selects',
 ]
 
 MIDDLEWARE = [
@@ -73,6 +74,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'catalog.wsgi.application'
+JQUERY_URL = False
 USE_DJANGO_JQUERY = True
 
 # Database
@@ -128,7 +130,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
