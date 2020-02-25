@@ -37,11 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'product.apps.ProductConfig',
+    # 'product.apps.ProductConfig',
     'main',
     'ckeditor',
     'ckeditor_uploader',
     'smart_selects',
+    'product',
 ]
 
 MIDDLEWARE = [
