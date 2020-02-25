@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'main',
     'ckeditor',
     'ckeditor_uploader',
+    'smart_selects',
 ]
 
 MIDDLEWARE = [
@@ -72,6 +73,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'catalog.wsgi.application'
+JQUERY_URL = False
 USE_DJANGO_JQUERY = True
 
 # Database

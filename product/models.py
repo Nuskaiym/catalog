@@ -11,6 +11,7 @@ class Category(models.Model):
     def __str__(self):
         return self.title
 
+
 class SubCategory(models.Model):
     title = models.CharField(max_length=100)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='sub_categories')
@@ -27,13 +28,14 @@ class Manufacturer(models.Model):
 class Product(models.Model):
     title = models.CharField(max_length=255)
     text = RichTextUploadingField()
+    is_top = models.BooleanField(default=False)
     characteristic = RichTextUploadingField()
     price = models.IntegerField()
     manufacturer = models.ForeignKey(Manufacturer, on_delete=models.CASCADE, related_name='products')
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='products')
-    sub_category = ChainedForeignKey(SubCategory,
-                                     chained_field="category",
-                                     chained_model_field="category",
-                                     show_all=False,
-                                     auto_choose=True,
-                                     sort=True)
+    sub_category = ChainedForeignKey(SubCategory, on_delete=models.CASCADE)
+                                     # chained_field="category",
+                                     # chained_model_field="category",
+                                     # show_all=False,
+                                     # auto_choose=True,
+                                     # sort=True)
