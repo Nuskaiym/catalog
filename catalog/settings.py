@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'product.apps.ProductConfig',
     'main',
+    'message',
     'ckeditor',
     'ckeditor_uploader',
 ]

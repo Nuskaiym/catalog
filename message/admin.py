@@ -1,3 +1,9 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Message
+
+
+@admin.register(Message)
+class MessageAdmin(admin.ModelAdmin):
+    list_filter = ('user_name', 'phone', 'title', 'text')
+    list_display = ('user_name', 'phone', 'title', 'text')
