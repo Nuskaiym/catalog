@@ -37,12 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'product.apps.ProductConfig',
+    'product.apps.ProductConfig',
     'main',
     'ckeditor',
     'ckeditor_uploader',
     'smart_selects',
-    'product',
 ]
 
 MIDDLEWARE = [
@@ -130,7 +129,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
