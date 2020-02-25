@@ -1,8 +1,9 @@
+{% load static %}
 <div id="contact" class="bs-contactus uk-light">
     <div class="uk-container">
         <div class="uk-grid-medium uk-margin-medium-bottom" uk-grid>
             <div class="uk-width-1-2 uk-width-1-3@s uk-width-1-4@m">
-                <img src="img/newlogo.png">
+                <img src="{% static 'img/newlogo.png' %}">
             </div>
             <div class="uk-width-1-1 uk-width-expand@m">
                 <form class="uk-grid-medium" method="post" action="mail.php" uk-grid>
@@ -46,7 +47,7 @@
                                 Email.: <span class="uk-text-bold">info@atehsys.kg</span></p>
                         </div>
                         <div class="uk-width-auto uk-flex-first uk-first-column">
-                            <img src="img/icon/pin.png" width="30">
+                            <img src="{% static 'img/icon/pin.png' %}" width="30">
                         </div>
                     </div>
                 </div>
@@ -177,13 +178,13 @@
 <div id="offcanvas-flip" uk-offcanvas="flip: true; overlay: true">
     <div class="uk-offcanvas-bar">
         <button class="uk-offcanvas-close" type="button" uk-close></button>
-        <img src="img/newlogo.png" width="100">
+        <img src="{% static 'img/newlogo.png' %}" width="100">
         <ul class="uk-list uk-text-uppercase uk-margin-medium-top">
             <li><a href="delivery.html">Доставка</a></li>
-            <li><a href="http://atehsys.kg/doc/price.pdf" target="_blank">Прайс-лист <img src="img/pdf.png"
+            <li><a href="http://atehsys.kg/doc/price.pdf" target="_blank">Прайс-лист <img src="{% static 'img/pdf.png' %}"
                                                                                           class="uk-margin-small-left"
                                                                                           width="16"></a></li>
-            <li><a href="http://atehsys.kg" target="_blank">О компании <img src="img/out.png"
+            <li><a href="http://atehsys.kg" target="_blank">О компании <img src="{% static 'img/out.png' %}"
                                                                             class="uk-margin-small-left" width="16"></a>
             </li>
             <li><a href="#contact" uk-scroll>контакты</a></li>
