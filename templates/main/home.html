@@ -1,113 +1,12 @@
 {% extends 'base.html' %}
+{% load category_tags %}
 {% load static %}
 {% block body %}
 
     <div id="mbdd" class="mbd">
         <div class="uk-container">
             <div class="uk-grid-medium" uk-grid>
-                <div class="uk-width-1-4@m uk-visible@m">
-                    <div class="sidebar uk-box-shadow-small" uk-sticky="offset: 25; bottom: #mbdd">
-                        <ul class="uk-nav-default uk-nav-parent-icon" uk-nav="multiple: true">
-                            <li class="uk-parent">
-                                <a href="#">Blackmagic Design</a>
-                                <ul class="uk-nav-sub">
-                                    <li><a href="#">Cintel Scanner</a></li>
-                                    <li><a href="#">DaVinci Resolve</a></li>
-                                    <li><a href="#">MultiView</a></li>
-                                    <li><a href="#">Ultimatte</a></li>
-                                    <li><a href="#">Вещательные конвертеры</a></li>
-                                    <li><a href="#">Запись и воспроизведение</a></li>
-                                    <li><a href="#">Камеры</a></li>
-                                    <li><a href="#">Коммутация и распределение</a></li>
-                                    <li><a href="#">Микшеры ATEM</a></li>
-                                    <li><a href="#">Мониторинг видео и звука</a></li>
-                                    <li><a href="#">Оборудование для тестирования</a></li>
-                                    <li><a href="#">Потоковая трансляция и кодирование</a></li>
-                                    <li><a href="#">Преобразование форматов</a></li>
-                                    <li><a href="#">Тиражирование копий, запись на диски и хранение данных</a></li>
-                                </ul>
-                            </li>
-                            <li class="uk-parent">
-                                <a href="#">Cinegyn</a>
-                                <ul class="uk-nav-sub">
-                                    <li><a href="#">....</a></li>
-                                </ul>
-                            </li>
-                            <li class="uk-parent">
-                                <a href="#">Datavideo</a>
-                                <ul class="uk-nav-sub">
-                                    <li><a href="#">....</a></li>
-                                </ul>
-                            </li>
-                            <li class="uk-parent">
-                                <a href="#">Fujinon</a>
-                                <ul class="uk-nav-sub">
-                                    <li><a href="#">....</a></li>
-                                </ul>
-                            </li>
-                            <li class="uk-parent">
-                                <a href="#">Guramex</a>
-                                <ul class="uk-nav-sub">
-                                    <li><a href="#">....</a></li>
-                                </ul>
-                            </li>
-                            <li class="uk-parent">
-                                <a href="#">Kupo</a>
-                                <ul class="uk-nav-sub">
-                                    <li><a href="#">....</a></li>
-                                </ul>
-                            </li>
-                            <li class="uk-parent">
-                                <a href="#">NewTek</a>
-                                <ul class="uk-nav-sub">
-                                    <li><a href="#">....</a></li>
-                                </ul>
-                            </li>
-                            <li class="uk-parent">
-                                <a href="#">Panasonic</a>
-                                <ul class="uk-nav-sub">
-                                    <li><a href="#">....</a></li>
-                                </ul>
-                            </li>
-                            <li class="uk-parent">
-                                <a href="#">Rotolight</a>
-                                <ul class="uk-nav-sub">
-                                    <li><a href="#">....</a></li>
-                                </ul>
-                            </li>
-                            <li class="uk-parent">
-                                <a href="#">Sennheiser</a>
-                                <ul class="uk-nav-sub">
-                                    <li><a href="#">....</a></li>
-                                </ul>
-                            </li>
-                            <li class="uk-parent">
-                                <a href="#">Swit</a>
-                                <ul class="uk-nav-sub">
-                                    <li><a href="#">....</a></li>
-                                </ul>
-                            </li>
-                            <li class="uk-parent">
-                                <a href="#">TVLogic</a>
-                                <ul class="uk-nav-sub">
-                                    <li><a href="#">....</a></li>
-                                </ul>
-                            </li>
-                            <li class="uk-parent">
-                                <a href="#">TVU</a>
-                                <ul class="uk-nav-sub">
-                                    <li><a href="#">....</a></li>
-                                </ul>
-                            </li>
-                            <li class="uk-parent">
-                                <a href="#">Visiolight</a>
-                                <ul class="uk-nav-sub">
-                                    <li><a href="#">....</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                {% categories_tag %}
                 <div class="uk-width-expand@m">
                     <div class="main-slider s uk-visible@m">
                         <div uk-slideshow="animation: push; max-height: 300">
