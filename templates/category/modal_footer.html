@@ -10,7 +10,7 @@
                     <li class="uk-parent">
                         <a href="#">{{ category.title }}</a>
                         <ul class="uk-nav-sub">
-                            {% for sub_category in category.sub_categories %}
+                            {% for sub_category in category.sub_categories.all %}
                                 <li><a href="#">{{ sub_category.title }}</a></li>
                             {% endfor %}
                         </ul>
