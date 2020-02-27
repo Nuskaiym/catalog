@@ -1,4 +1,5 @@
 {% load static %}
+{% load category_tags %}
 <div id="contact" class="bs-contactus uk-light">
     <div class="uk-container">
         <div class="uk-grid-medium uk-margin-medium-bottom" uk-grid>
@@ -77,118 +78,7 @@
         </div>
     </div>
 </div>
-<div id="modal-catnav" uk-modal>
-    <div class="uk-modal-dialog">
-        <button class="uk-modal-close-default" type="button" uk-close></button>
-        <div class="uk-modal-header">
-            <h2 class="uk-modal-title">Каталог товаров</h2>
-        </div>
-        <div class="uk-modal-body" uk-overflow-auto>
-            <ul class="uk-nav-default uk-nav-parent-icon uk-nav" uk-nav="multiple: true">
-                <li class="uk-parent">
-                    <a href="#">Blackmagic Design</a>
-                    <ul class="uk-nav-sub">
-                        <li><a href="#">Cintel Scanner</a></li>
-                        <li><a href="#">DaVinci Resolve</a></li>
-                        <li><a href="#">MultiView</a></li>
-                        <li><a href="#">Ultimatte</a></li>
-                        <li><a href="#">Вещательные конвертеры</a></li>
-                        <li><a href="#">Запись и воспроизведение</a></li>
-                        <li><a href="#">Камеры</a></li>
-                        <li><a href="#">Коммутация и распределение</a></li>
-                        <li><a href="#">Микшеры ATEM</a></li>
-                        <li><a href="#">Мониторинг видео и звука</a></li>
-                        <li><a href="#">Оборудование для тестирования</a></li>
-                        <li><a href="#">Потоковая трансляция и кодирование</a></li>
-                        <li><a href="#">Преобразование форматов</a></li>
-                        <li><a href="#">Тиражирование копий, запись на диски и хранение данных</a></li>
-                    </ul>
-                </li>
-                <li class="uk-parent">
-                    <a href="#">Cinegyn</a>
-                    <ul class="uk-nav-sub">
-                        <li><a href="#">....</a></li>
-                    </ul>
-                </li>
-                <li class="uk-parent">
-                    <a href="#">Datavideo</a>
-                    <ul class="uk-nav-sub">
-                        <li><a href="#">....</a></li>
-                    </ul>
-                </li>
-                <li class="uk-parent">
-                    <a href="#">Fujinon</a>
-                    <ul class="uk-nav-sub">
-                        <li><a href="#">....</a></li>
-                    </ul>
-                </li>
-                <li class="uk-parent">
-                    <a href="#">Guramex</a>
-                    <ul class="uk-nav-sub">
-                        <li><a href="#">....</a></li>
-                    </ul>
-                </li>
-                <li class="uk-parent">
-                    <a href="#">Kupo</a>
-                    <ul class="uk-nav-sub">
-                        <li><a href="#">....</a></li>
-                    </ul>
-                </li>
-                <li class="uk-parent">
-                    <a href="#">NewTek</a>
-                    <ul class="uk-nav-sub">
-                        <li><a href="#">....</a></li>
-                    </ul>
-                </li>
-                <li class="uk-parent">
-                    <a href="#">Panasonic</a>
-                    <ul class="uk-nav-sub">
-                        <li><a href="#">....</a></li>
-                    </ul>
-                </li>
-                <li class="uk-parent">
-                    <a href="#">Rotolight</a>
-                    <ul class="uk-nav-sub">
-                        <li><a href="#">....</a></li>
-                    </ul>
-                </li>
-                <li class="uk-parent">
-                    <a href="#">Sennheiser</a>
-                    <ul class="uk-nav-sub">
-                        <li><a href="#">....</a></li>
-                    </ul>
-                </li>
-                <li class="uk-parent">
-                    <a href="#">Swit</a>
-                    <ul class="uk-nav-sub">
-                        <li><a href="#">....</a></li>
-                    </ul>
-                </li>
-                <li class="uk-parent">
-                    <a href="#">TVLogic</a>
-                    <ul class="uk-nav-sub">
-                        <li><a href="#">....</a></li>
-                    </ul>
-                </li>
-                <li class="uk-parent">
-                    <a href="#">TVU</a>
-                    <ul class="uk-nav-sub">
-                        <li><a href="#">....</a></li>
-                    </ul>
-                </li>
-                <li class="uk-parent">
-                    <a href="#">Visiolight</a>
-                    <ul class="uk-nav-sub">
-                        <li><a href="#">....</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <div class="uk-modal-footer uk-text-right">
-            <button class="uk-button uk-button-default uk-modal-close" type="button">Назад</button>
-        </div>
-    </div>
-</div>
+{% modal_categories_tag %}
 <div id="offcanvas-flip" uk-offcanvas="flip: true; overlay: true">
     <div class="uk-offcanvas-bar">
         <button class="uk-offcanvas-close" type="button" uk-close></button>
