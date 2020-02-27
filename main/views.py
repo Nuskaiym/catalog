@@ -14,11 +14,9 @@ class HomeViews(TemplateView):
     def get(self, request, *args, **kwargs):
         top_products = Product.objects.all().filter(is_top=True)[:6]
         new_products = Product.objects.all().filter(is_new=True)[:3]
-        message_form = MessageForm()
         return render(request, self.template_name, {
             'top_products': top_products,
             'new_products': new_products,
-            'message_form': message_form,
         })
 
     # def post(self, request, *args, **kwargs):
