@@ -1,3 +1,4 @@
+from message.forms import MessageForm
 from product.models import *
 from django import template
 
@@ -14,6 +15,13 @@ def categories_tag():
 def modal_categories_tag():
     categories = Category.objects.all()
     return {'categories': categories}
+
+
+
+@register.inclusion_tag('main/contact_form.html')
+def contact_tag():
+    message_form = MessageForm()
+    return {'message_form': message_form}
 
 
 @register.inclusion_tag('category/list_manufacturer.html')

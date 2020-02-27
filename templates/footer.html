@@ -6,49 +6,7 @@
             <div class="uk-width-1-2 uk-width-1-3@s uk-width-1-4@m">
                 <img src="{% static 'img/newlogo.png' %}">
             </div>
-            <div class="uk-width-1-1 uk-width-expand@m">
-                <form action="" method="post">
-                    {% csrf_token %}
-                    {% for foo in message_form %}
-                        {{ foo.help_text }}<br>
-                        {{ foo }}<br>
-                    {% endfor %}
-                    <button type="submit" value="">Отправить</button>
-                </form>
-{#                <form class="uk-grid-medium" method="post" action="" uk-grid>#}
-{#                    {% csrf_token %}#}
-{#                    {{ message.user_name.errors }}#}
-{#                    <div class="uk-width-1-2">#}
-{#                        <input class="uk-input uk-form-width-large" type="text" placeholder="Ваше имя" name="name"#}
-{#                               required="" value="{{ message.user_name }}">#}
-{#                    </div>#}
-{#                    {{ message.email.errors }}#}
-{#                    <div class="uk-width-1-2">#}
-{#                        <input class="uk-input uk-form-width-large" type="email" placeholder="Email" name="mail"#}
-{#                               pattern="[a-zA-Z0-9\._-]*[A-Za-z0-9_]+@[a-zA-Z0-9\-]*[A-Za-z0-9_]+\.[a-zA-Z0-9]+"#}
-{#                               required="" value="{{ message.email }}">#}
-{#                    </div>#}
-{#                    {{ message.phone.errors }}#}
-{#                    <div class="uk-width-1-2">#}
-{#                        <input class="uk-input uk-form-width-large" type="number" placeholder="Телефон" name="name"#}
-{#                               required="" value="{{ message.phone }}">#}
-{#                    </div>#}
-{#                    {{ message.title.errors }}#}
-{#                    <div class="uk-width-1-2">#}
-{#                        <input class="uk-input uk-form-width-large" type="title" placeholder="Тема письма" name="title"#}
-{#                               pattern="[a-zA-Z0-9\._-]*[A-Za-z0-9_]+@[a-zA-Z0-9\-]*[A-Za-z0-9_]+\.[a-zA-Z0-9]+"#}
-{#                               required="" value="{{ message.title }}">#}
-{#                    </div>#}
-{#                    {{ message.text.errors }}#}
-{#                    <div class="uk-width-1-1">#}
-{#                        <textarea class="uk-textarea" rows="5" type="text" placeholder="Сообщение:" name="message"#}
-{#                                  required="" value="{{ message.text }}"></textarea>#}
-{#                    </div>#}
-{#                    <div class="uk-width-1-1 uk-text-center uk-text-right@m uk-margin-medium-top uk-margin-remove-bottom">#}
-{#                        <button class="uk-button uk-button-primary uk-width-1-1" type="submit">Отправить</button>#}
-{#                    </div>#}
-{#                </form>#}
-            </div>
+        {% contact_tag %}
             <div class="uk-width-1-1@s uk-width-1-3@m">
                 <div>
                     <div class="uk-flex-top uk-grid-small uk-grid" uk-grid="">
