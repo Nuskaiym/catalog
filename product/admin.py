@@ -20,7 +20,7 @@ class ProductAdmin(admin.ModelAdmin):
 
 
 class ManufacturerAdmin(admin.ModelAdmin):
-    list_display = ['title', 'url']
+    list_display = ['title']
     search_fields = ['title']
 
 

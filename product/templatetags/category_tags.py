@@ -14,3 +14,9 @@ def categories_tag():
 def modal_categories_tag():
     categories = Category.objects.all()
     return {'categories': categories}
+
+
+@register.inclusion_tag('category/list_manufacturer.html')
+def manufacturer_tag():
+    manufacturers = Manufacturer.objects.all()
+    return {'manufacturers': manufacturers}

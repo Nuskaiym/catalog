@@ -1,19 +1,28 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 
+from product.models import *
 
-class CategoryView(TemplateView):
-    template_name = 'category/listCategory.html'
+
+class CategoryProductsView(TemplateView):
+    template_name = 'category/listProduct.html'
 
     def get(self, request, *args, **kwargs):
-        event = Event.objects.get(id=kwargs['event_id'])
-        bracket_list = Bracket.objects.select_related('group').order_by('status').filter(
-            status__in=['PLAY', 'PREPARE_FIRST', 'PREPARE_SECOND'],
-            group__event_id=event.id
-        )
-        # print('bracket_list')
-        # print(bracket_list)
+        sub_category = SubCategory.objects.get(id=kwargs['sub_category_id'])
+        products = Product.objects.order_by('-id').filter(sub_category=sub_category)
         return render(request, self.template_name, context={
-            'bracket_list': bracket_list,
-            'event': event,
+            'products': products,
+            'sub_category': sub_category,
+        })
+
+
+class ManufacturerProductsView(TemplateView):
+    template_name = 'category/listManufacturerProduct.html'
+
+    def get(self, request, *args, **kwargs):
+        manufacturer = Manufacturer.objects.get(id=kwargs['manufacturer_id'])
+        products = Product.objects.order_by('-id').filter(manufacturer=manufacturer)
+        return render(request, self.template_name, context={
+            'products': products,
+            'manufacturer': manufacturer,
         })

@@ -29,11 +29,31 @@ class SubCategory(models.Model):
 class Manufacturer(models.Model):
     title = models.CharField(max_length=100)
     is_active = models.BooleanField(default=True)
-    photo = ResizedImageField(upload_to='product/', verbose_name='Фотография', size=[1000, 600], max_length=300)
-    url = models.URLField(default=None)
+    image = models.ImageField(upload_to='manufacturer/')
 
     def __str__(self):
         return self.title
+
+    def save(self, *args, **kwargs):
+        try:
+            this = Manufacturer.objects.get(id=self.id)
+            if this.image != self.image:
+                this.image.delete()
+
+        except:
+            pass
+
+        super(Manufacturer, self).save(*args, **kwargs)
+        img = Image.open(self.image)
+        width, height = img.size
+        if width > 800:
+            ratio = float(width / 800)
+            width = int(width / ratio)
+            height = int(height / ratio)
+            img = img.resize((width, height), PIL.Image.ANTIALIAS)
+            img.save(self.image.path, quality=100, optimize=True)
+        else:
+            img.save(self.image.path, quality=100, optimize=True)
 
 
 class Product(models.Model):

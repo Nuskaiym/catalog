@@ -21,7 +21,8 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path(r'^chaining/', include('smart_selects.urls')),
+    path('chaining/', include('smart_selects.urls')),
     path('', include('main.urls')),
-    path(r'^ckeditor/', include('ckeditor_uploader.urls')),
+    path('product/', include('product.urls')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
