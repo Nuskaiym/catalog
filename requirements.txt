@@ -4,6 +4,7 @@ django-ckeditor==5.8.0
 django-js-asset==1.2.2
 django-resized==0.3.9
 django-smart-selects==1.5.4
+django-widget-tweaks==1.4.5
 mysqlclient==1.4.6
 patterns==0.3
 Pillow==6.2.1
