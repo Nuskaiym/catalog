@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load category_tags %}
+{% load static %}
+{% block body %}
+    <div id="mbdd" class="mbd">
+        <div class="uk-container">
+            <div class="uk-grid-medium" uk-grid>
+                {% categories_tag %}
+                <div class="uk-width-expand">
+                    <div class="breadcrumb uk-box-shadow-small">
+                        <ul class="uk-breadcrumb uk-margin-remove-bottom">
+                            <li><a href="{% url 'home' %}">Главная</a></li>
+                            <li><a href="#">{{product.category}}</a></li>
+                            <li><a href="#">{{product.sub_category.title}}</a></li>
+                            <li><span>{{product.title}}</span></li>
+                        </ul>
+                    </div>
+                    <div class="uk-card uk-card-default uk-card-small uk-card-body">
+                        <h4 class="uk-text-left uk-text-uppercase uk-text-bold uk-margin-remove-bottom">{{product.title}}</h4>
+                        <p class="uk-text-muted uk-margin-remove-top">Производитель: <a
+                                href="#"><b>{{product.manufacturer.title}}</b></a></small></p>
+                        <div class="pro-price">{{product.price}}</div>
+                        <div class="uk-display-block uk-margin-top" style="padding: 0px 0px 0px 10px;">
+                            <ul class="uk-subnav uk-subnav-pill" uk-switcher="connect: .switcher-container">
+                                <li><a href="#">Описание</a></li>
+                                <li><a href="#">Характеристики</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="uk-margin-medium-bottom uk-margin-medium-top">
+                        <div class="uk-grid-medium uk-margin-large-bottom" uk-grid>
+                            <div id="prod-content" class="uk-width-expand@m">
+                                <div class="uk-position-relative" uk-slideshow="animation: slide-right">
+                                    <ul class="uk-slideshow-items">
+                                        <li>
+                                            <img src="{{product.image.url}}" alt="{{ product.title }}" uk-cover>
+                                        </li>
+{#                                        <li>#}
+{#                                            <img src="img/pro/GO500Studio-1.jpg" alt="" uk-cover>#}
+{#                                        </li>#}
+{#                                        <li>#}
+{#                                            <img src="img/pro/KomplektURSABradcast.jpg" alt="" uk-cover>#}
+{#                                        </li>#}
+                                    </ul>
+                                    <div class="uk-position-center-right uk-position-small">
+                                        <ul class="uk-thumbnav uk-thumbnav-vertical">
+
+                                            <li uk-slideshow-item="0"><a href="#"><img
+                                                    src="{{product.image.url}}" width="70" alt="{{ product.title }}"></a></li>
+{#                                            <li uk-slideshow-item="1"><a href="#"><img src="img/pro/GO500Studio-1.jpg"#}
+{#                                                                                       width="70" alt=""></a></li>#}
+{#                                            <li uk-slideshow-item="2"><a href="#"><img#}
+{#                                                    src="img/pro/KomplektURSABradcast.jpg" width="70" alt=""></a></li>#}
+                                        </ul>
+                                    </div>
+                                </div>
+                                <ul class="uk-switcher switcher-container uk-margin">
+                                    <li>
+                                        <div class="uk-card uk-card-default uk-card-body">
+                                            {{product.text}}
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="uk-card uk-card-default uk-card-body">
+                                            {{product.characteristic}}
+                                            <p class="uk-margin-medium-top"><a href="#" uk-switcher-item="previous"
+                                                                               class="uk-button uk-button-primary uk-border-rounded">
+                                                Описание</a></p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

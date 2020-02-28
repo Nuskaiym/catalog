@@ -19,17 +19,6 @@ class HomeViews(TemplateView):
             'new_products': new_products,
         })
 
-    # def post(self, request, *args, **kwargs):
-    #     message_form = MessageForm(data=request.POST)
-    #     if message_form.is_valid():
-    #         print('postko keldi')
-    #         new_message = message_form.save(commit=False)
-    #         new_message.save()
-    #         return HttpResponseRedirect('/')
-    #     else:
-    #         print('no valid!!!!!!!!!!!')
-    #     return HttpResponse('invalid form')
-
 
 def send_message(request, *args, **kwargs):
     message_form = MessageForm(data=request.POST)

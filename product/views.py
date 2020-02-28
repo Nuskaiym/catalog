@@ -26,3 +26,13 @@ class ManufacturerProductsView(TemplateView):
             'products': products,
             'manufacturer': manufacturer,
         })
+
+
+class Product(TemplateView):
+    template_name = 'product/getProduct.html'
+
+    def get(self, request, *args, **kwargs):
+        product = Product.objects.get(id=kwargs['product_id'])
+        return render(request, self.template_name, context={
+            'product': product
+        })

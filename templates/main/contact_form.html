@@ -10,13 +10,13 @@
             {{ message_form.email|add_class:'uk-input uk-form-width-large'|attr:'placeholder:Email'}}
         </div>
         <div class="uk-width-1-2">
-            {{ message_form.phone|add_class:'uk-input uk-form-width-large'|attr:'placeholder:Телефон'}}
+            {{ message_form.phone|add_class:'uk-input uk-form-width-large'|attr:'placeholder:Телефон'|attr:'type:tel'}}
         </div>
         <div class="uk-width-1-2">
             {{ message_form.title|add_class:'uk-input uk-form-width-large'|attr:'placeholder:Тема письма'}}
         </div>
         <div class="uk-width-1-1">
-            {{ message_form.text|add_class:'uk-textarea'|attr:'placeholder:Телефон rows:5'}}
+            {{ message_form.text|add_class:'uk-textarea'|attr:'placeholder:Телефон'|attr:'rows:5'}}
         </div>
         <div class="uk-width-1-1 uk-text-center uk-text-right@m uk-margin-medium-top uk-margin-remove-bottom">
             <button class="uk-button uk-button-primary uk-width-1-1" type="submit">Отправить</button>
