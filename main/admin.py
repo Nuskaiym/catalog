@@ -1,3 +1,10 @@
 from django.contrib import admin
+from main.models import Slider
 
-# Register your models here.
+
+class SliderAdmin(admin.ModelAdmin):
+    list_display = ['id', 'title']
+    search_fields = ['title']
+
+
+admin.site.register(Slider, SliderAdmin)

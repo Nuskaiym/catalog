@@ -1,5 +1,6 @@
 from message.forms import MessageForm
 from product.models import *
+from main.models import *
 from django import template
 
 register = template.Library()
@@ -17,7 +18,6 @@ def modal_categories_tag():
     return {'categories': categories}
 
 
-
 @register.inclusion_tag('main/contact_form.html')
 def contact_tag():
     message_form = MessageForm()
@@ -28,3 +28,9 @@ def contact_tag():
 def manufacturer_tag():
     manufacturers = Manufacturer.objects.all()
     return {'manufacturers': manufacturers}
+
+
+@register.inclusion_tag('main/slider.html')
+def slider():
+    slider = Slider.objects.all()
+    return {'slider': slider}
