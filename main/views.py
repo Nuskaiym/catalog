@@ -30,3 +30,11 @@ def send_message(request, *args, **kwargs):
     else:
         print('no valid!!!!!!!!!!!')
     return HttpResponse('invalid form')
+
+
+def delivery(request):
+    return render(request, 'main/delivery.html')
+
+
+def contact(request):
+    return render(request, 'main/delivery.html')

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load category_tags %}
+{% block body %}
+<div id="mbdd" class="mbd">
+            <div class="uk-container">
+                <div class="uk-grid-medium" uk-grid>
+                    {% categories_tag %}
+                    <div class="uk-width-expand">
+                        <div class="breadcrumb uk-box-shadow-small">
+                            <ul class="uk-breadcrumb uk-margin-remove-bottom">
+                                <li><a href="{% url 'home' %}">Главная</a></li>
+                                <li><a href="#">Доставка</a></li>
+                            </ul>
+                        </div>
+                        <div class="uk-margin-medium-bottom uk-margin-medium-top">
+                            <div class="uk-grid-medium uk-margin-large-bottom" uk-grid>
+                                <div id="prod-content" class="uk-width-expand@m">
+                                    <p> – профессиональная камера для создания контента виртуальной реальности и ведения потокового вещания. Это компактное устройство цилиндрической формы оснащено четырьмя датчиками изображения Sony CMOS. Она обеспечивает сферический захват видео VR со скоростью 30 кадров в формате 6К и 60 в режиме 4К. Модель гарантирует суперлегкую съемку и безупречное качество изображения.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

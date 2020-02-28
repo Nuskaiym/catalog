@@ -22,27 +22,34 @@
                              uk-grid uk-height-match="target: > div > .uk-card">
                             {% for product in products %}
                                 <div>
-                                    <a class="uk-card uk-card-small uk-card-default uk-display-block prod-card">
+                                    <a href="{% url 'get_product' product.id %}"
+                                       class="uk-card uk-card-small uk-card-default uk-display-block prod-card">
                                         <div class="uk-card-media-top">
-                                            <img src="{{product.image.url}}" alt="{{ product.title }}">
+                                            <img src="{{ product.image.url }}" alt="{{ product.title }}">
                                         </div>
                                         <div class="uk-card-body">
-                                            <h5 class="uk-text-bold">{{product.title}}</h5>
+                                            <h5 class="uk-text-bold">{{ product.title }}</h5>
                                             <p class="uk-text-muted"><small>Производитель:
-                                                <b>{{product.manufacturer}}</b></small></p>
-                                            <p class="price">{{product.price}} сом</p>
+                                                <b>{{ product.manufacturer }}</b></small></p>
+                                            <p class="price">
+                                                {% if product.price <= 0 %}
+                                                    Цена по запросу
+                                                {% else %}
+                                                    {{ product.price }} сом
+                                                {% endif %}
+                                            </p>
                                         </div>
                                     </a>
                                 </div>
                             {% endfor %}
                         </div>
-{#                        <ul class="uk-pagination uk-flex-center" uk-margin>#}
-{#                            <li><a href="#"><span uk-pagination-previous></span></a></li>#}
-{#                            <li><a href="#">1</a></li>#}
-{#                            <li><a href="#">2</a></li>#}
-{#                            <li class="uk-active"><span>3</span></li>#}
-{#                            <li><a href="#"><span uk-pagination-next></span></a></li>#}
-{#                        </ul>#}
+                        {#                        <ul class="uk-pagination uk-flex-center" uk-margin>#}
+                        {#                            <li><a href="#"><span uk-pagination-previous></span></a></li>#}
+                        {#                            <li><a href="#">1</a></li>#}
+                        {#                            <li><a href="#">2</a></li>#}
+                        {#                            <li class="uk-active"><span>3</span></li>#}
+                        {#                            <li><a href="#"><span uk-pagination-next></span></a></li>#}
+                        {#                        </ul>#}
 
                     </div>
                 </div>

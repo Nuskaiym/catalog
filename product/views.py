@@ -28,7 +28,7 @@ class ManufacturerProductsView(TemplateView):
         })
 
 
-class Product(TemplateView):
+class ProductView(TemplateView):
     template_name = 'product/getProduct.html'
 
     def get(self, request, *args, **kwargs):

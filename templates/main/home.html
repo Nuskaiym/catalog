@@ -122,13 +122,13 @@
                              uk-grid uk-height-match="target: > div > .uk-card">
                             {% for product in new_products %}
                                 <div>
-                                <a class="uk-card uk-card-small uk-card-default uk-display-block prod-card">
+                                <a href="{% url 'get_product' product.id %}" class="uk-card uk-card-small uk-card-default uk-display-block prod-card">
                                     <div class="uk-card-media-top">
                                         <img src="{{ product.image.url }}" alt="">
                                     </div>
                                     <div class="uk-card-body">
                                         <h5 class="uk-text-bold">{{ product.title }}</h5>
-                                        <p class="uk-text-muted"><small>Видеокамеры<br>Производитель: <b>BlackMagic</b></small>
+                                        <p class="uk-text-muted"><small>Производитель: <b>{{product.manufacturer}}</b></small>
                                         </p>
                                         <p class="price">{{ product.price }}</p>
                                     </div>
@@ -142,13 +142,13 @@
                              uk-grid uk-height-match="target: > div > .uk-card">
                             {% for product in top_products %}
                                 <div>
-                                <a class="uk-card uk-card-small uk-card-default uk-display-block prod-card">
+                                <a href="{% url 'get_product' product.id %}" class="uk-card uk-card-small uk-card-default uk-display-block prod-card">
                                     <div class="uk-card-media-top">
                                         <img src="{{ product.image.url }}" alt="">
                                     </div>
                                     <div class="uk-card-body">
                                         <h5 class="uk-text-bold">{{ product.title }}</h5>
-                                        <p class="uk-text-muted"><small>Видеокамеры<br>Производитель: <b>BlackMagic</b></small>
+                                        <p class="uk-text-muted"><small>Производитель: <b>{{product.manufacturer}}</b></small>
                                         </p>
                                         <p class="price">{{ product.price }}</p>
                                     </div>
