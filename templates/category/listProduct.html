@@ -29,7 +29,7 @@
                                         </div>
                                         <div class="uk-card-body">
                                             <h5 class="uk-text-bold">{{ product.title }}</h5>
-                                            <p class="uk-text-muted"><small>Производитель:
+                                            <p class="uk-text-muted"><small>{{ product.sub_category.title }} <br>Производитель:
                                                 <b>{{ product.manufacturer }}</b></small></p>
                                             <p class="price">
                                                 {% if product.price <= 0 %}

@@ -16,18 +16,27 @@
                              uk-grid uk-height-match="target: > div > .uk-card">
                             {% for product in new_products %}
                                 <div>
-                                <a href="{% url 'get_product' product.id %}" class="uk-card uk-card-small uk-card-default uk-display-block prod-card">
-                                    <div class="uk-card-media-top">
-                                        <img src="{{ product.image.url }}" alt="">
-                                    </div>
-                                    <div class="uk-card-body">
-                                        <h5 class="uk-text-bold">{{ product.title }}</h5>
-                                        <p class="uk-text-muted"><small>Производитель: <b>{{product.manufacturer}}</b></small>
-                                        </p>
-                                        <p class="price">{{ product.price }}</p>
-                                    </div>
-                                </a>
-                            </div>
+                                    <a href="{% url 'get_product' product.id %}"
+                                       class="uk-card uk-card-small uk-card-default uk-display-block prod-card">
+                                        <div class="uk-card-media-top">
+                                            <img src="{{ product.image.url }}" alt="">
+                                        </div>
+                                        <div class="uk-card-body">
+                                            <h5 class="uk-text-bold">{{ product.title }}</h5>
+                                            <p class="uk-text-muted"><small>{{ product.sub_category.title }} <br>
+                                                Производитель:
+                                                <b>{{ product.manufacturer }}</b></small>
+                                            </p>
+                                            <p class="price">
+                                                {% if product.price <= 0 %}
+                                                    Цена по запросу
+                                                {% else %}
+                                                    {{ product.price }} сом
+                                                {% endif %}
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
                             {% endfor %}
                         </div>
                         <h3 class="uk-heading-line uk-text-center uk-text-uppercase uk-text-bold">
@@ -36,21 +45,29 @@
                              uk-grid uk-height-match="target: > div > .uk-card">
                             {% for product in top_products %}
                                 <div>
-                                <a href="{% url 'get_product' product.id %}" class="uk-card uk-card-small uk-card-default uk-display-block prod-card">
-                                    <div class="uk-card-media-top">
-                                        <img src="{{ product.image.url }}" alt="">
-                                    </div>
-                                    <div class="uk-card-body">
-                                        <h5 class="uk-text-bold">{{ product.title }}</h5>
-                                        <p class="uk-text-muted"><small>Производитель: <b>{{product.manufacturer}}</b></small>
-                                        </p>
-                                        <p class="price">{{ product.price }}</p>
-                                    </div>
-                                </a>
-                            </div>
+                                    <a href="{% url 'get_product' product.id %}"
+                                       class="uk-card uk-card-small uk-card-default uk-display-block prod-card">
+                                        <div class="uk-card-media-top">
+                                            <img src="{{ product.image.url }}" alt="">
+                                        </div>
+                                        <div class="uk-card-body">
+                                            <h5 class="uk-text-bold">{{ product.title }}</h5>
+                                            <p class="uk-text-muted"><small>{{ product.sub_category.title }} <br>Производитель:
+                                                <b>{{ product.manufacturer }}</b></small>
+                                            </p>
+                                            <p class="price">
+                                                {% if product.price <= 0 %}
+                                                    Цена по запросу
+                                                {% else %}
+                                                    {{ product.price }} сом
+                                                {% endif %}
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
                             {% endfor %}
                         </div>
-                    {% manufacturer_tag %}
+                        {% manufacturer_tag %}
                     </div>
                 </div>
             </div>
